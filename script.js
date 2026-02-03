@@ -1,6 +1,7 @@
 const grid = document.querySelector(".pokemon-grid");
 const details = document.querySelector(".pokemon-details");
 const searchInput = document.querySelector(".search-filter input");
+const typeSelect = document.querySelector(".search-filter select");
 
 let allPokemon = []; 
 
@@ -43,23 +44,61 @@ function showDetails(pokemon) {
     </div>
   `;
 }
+
+function applyFilters() {
+  const value = searchInput.value.trim().toLowerCase();
+  const selectedType = (typeSelect && typeSelect.value) ? typeSelect.value.toLowerCase() : "all";
+
+  grid.innerHTML = "";
+
+  const filtered = allPokemon.filter(p => {
+    const matchesName = p.name.toLowerCase().includes(value);
+    if (selectedType === "all" || selectedType === "") return matchesName;
+
+    const types = p.types.map(t => t.type.name.toLowerCase());
+    const matchesType = types.includes(selectedType);
+    return matchesName && matchesType;
+  });
+
+  filtered.forEach(createCard);
+}
+
 async function loadPokemon() {
   for (let i = 1; i <= 200; i++) {
-    const pokemon = await fetchPokemon(i);
-    allPokemon.push(pokemon);
-    createCard(pokemon);
+    try {
+      const pokemon = await fetchPokemon(i);
+      allPokemon.push(pokemon);
+      createCard(pokemon);
+    } catch (err) {
+      console.error('Failed to fetch pokemon', i, err);
+    }
   }
+
+  if (typeSelect) {
+    const types = new Set();
+    allPokemon.forEach(p => p.types.forEach(t => types.add(t.type.name)));
+
+
+    typeSelect.innerHTML = "";
+    const allOpt = document.createElement('option');
+    allOpt.value = 'all';
+    allOpt.textContent = 'All';
+    typeSelect.appendChild(allOpt);
+
+    Array.from(types).sort().forEach(t => {
+      const opt = document.createElement('option');
+      opt.value = t;
+      opt.textContent = t.charAt(0).toUpperCase() + t.slice(1);
+      typeSelect.appendChild(opt);
+    });
+  }
+
+
+  applyFilters();
 }
 
 loadPokemon();
 
-searchInput.addEventListener("input", () => {
-  const value = searchInput.value.toLowerCase();
-  grid.innerHTML = "";
+searchInput.addEventListener("input", applyFilters);
+if (typeSelect) typeSelect.addEventListener("change", applyFilters);
 
-  const filtered = allPokemon.filter(p =>
-    p.name.includes(value)
-  );
-
-  filtered.forEach(createCard);
-});

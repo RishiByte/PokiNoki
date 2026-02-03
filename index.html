@@ -5,15 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PokiNoki</title>
   <link rel="stylesheet" href="./style.css" />
+  <link rel="icon" type="image/png" href="Favicon.png "/>
 </head>
-
 <body>
-
   <section class="search-filter">
-    <input type="text" id="search"placeholder="Search Pokémon..." />
+    <img id="logo" src="./Logo.png"/>
+    <input type="text" id="search" placeholder="Search Pokémon..." />
    <section class="filters-section">
+    
     <div class="filters">
-      <select>
+      <select id="sort">
         <option>Type</option>
         <option>Fire type</option>
         <option>Water type</option>
@@ -32,98 +33,11 @@
         <option>Dragon type</option>
         <option>Ice type</option>
       </select>
-
-      <select>
-        <option>Ability</option>
-        <option>overgrow</option>
-        <option>chlorophyll</option>
-        <option>blaze</option>
-        <option>solar-power</option>
-        <option>torrent</option>
-        <option>rain-dish</option>
-        <option>shield-dust</option>
-        <option>run-away</option>
-        <option>compound-eyes</option>
-        <option>inted-lens</option>
-        <option>shed-skin</option>
-        <option>run-away</option>
-        <option>swarm</option>
-        <option>sniper</option>
-        <option>keen-eye</option>
-        <option>tangled-feet</option>
-        <option>big-pecks</option>
-        <option>run-away</option>
-        <option>guts</option>
-        <option>hustle</option>
-        <option>intimidate</option>
-        <option>unnerve</option>
-        <option>static</option>
-        <option>lightning-rod</option>
-        <option>sand-veil</option>
-        <option>sand-rush</option>
-        <option>poison-poin</option>
-        <option>rivalry</option>
-        <option>sheer-force</option>
-        <option>cute-charm</option>
-        <option>magic-guard</option>
-        <option>friend-guard</option>
-        <option>unaware</option>
-        <option>flash-fire</option>
-        <option>drought</option>
-        <option>frisk</option>
-        <option>competitive</option>
-        <option>inner-focus</option>
-        <option>infiltrator</option>
-        <option>stench</option>
-        <option>effect-spore</option>
-        <option>dry-skin</option>
-        <option>damp</option>
-        <option>wonder-skin</option>
-        <option>arena-trap</option>
-        <option>sand-force</option>
-        <option>pickup</option>
-        <option>technician</option>
-        <option>unnerve</option>
-        <option>limber</option>
-        <option>cloud-nine</option>
-        <option>swift-swim</option>
-        <option>vital-spirit</option>
-        <option>anger-point</option>
-        <option>defiant</option>
-        <option>justified</option>
-        <option>water-absorb</option>
-        <option>synchronize</option>
-        <option>no-guard</option>
-        <option>steadfast</option>
-        <option>gluttony</option>
-
-      </select>
-
-      <select>
-        <option>Height</option>
-        <option>1-5</option>
-        <option>6-10</option>
-        <option>11-15</option>
-        <option>16-20</option>
-        <option>21-25</option>
-        <option>26-30</option>
-        <option>31-35</option>
-      </select>
-
-      <select>
-        <option>Weight</option>
-        <option>1-200</option>
-        <option>200-500</option>
-        <option>500-1000</option>
-        <option>1000-2000</option>
-        <option>2000+</option>
-
-      </select>
-        
-
     </div>
-    <div class="filters">Made By Rishi Bhardwaj<a class="githubid" href="https://github.com/RishiByte">(RishiByte)</a>And Shivam Bilwadiya<a class="githubid" href="https://github.com/ShivamBilwadiya">(ShivamBilwadiya)</a></div>
+    
+   
   </section>
+   <div class="filters" id="developers">Made By Rishi Bhardwaj<a class="githubid" href="https://github.com/RishiByte">(RishiByte)</a>And Shivam Bilwadiya<a class="githubid" href="https://github.com/ShivamBilwadiya">(ShivamBilwadiya)</a></div>
   </section>
 
   <main class="pokedex-container">
@@ -136,11 +50,11 @@
 
       <div class="details-header">
         <h2>Pokemon Name</h2>
-        <img src="" alt="pokemon artwork" />
+        <img src="./Favicon.png" alt="pokemon artwork" />
       </div>
 
       <div class="details-info">
-        <p><strong>Type:</strong> Water / Steel</p>
+        <p><strong>Type:</strong> --</p>
         <p><strong>Height:</strong> --</p>
         <p><strong>Weight:</strong> --</p>
         <p><strong>Abilities:</strong> --</p>
