@@ -2,9 +2,6 @@
 
 Pokenoki is a Pokémon-themed web application that allows users to browse, search, and view detailed information about Pokémon through a clean, modern, and card-based interface. The project focuses on simplicity, smooth user experience, and frontend development best practices.
 
-🌐 Local Preview  
-http://127.0.0.1:3000/index.html
-
 🖥️ Application Overview  
 - Pokémon-themed branding with custom logo and favicon  
 - Search bar to find Pokémon by name  
@@ -39,7 +36,6 @@ Pokenoki/
 1. Clone or download the project  
 2. Open the folder in any code editor  
 3. Start a local server (Live Server / Python / Node)  
-4. Open in browser: http://127.0.0.1:3000/index.html  
 
 🎯 Future Enhancements  
 - Pokémon API integration  
